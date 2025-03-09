@@ -1,6 +1,6 @@
 import express from "express";
 import cors from "cors";
-import emailRouter from "./router/emailRouter";
+import emailRouter from "./router/emailRouter.js";
 
 const app = express();
 const PORT = process.env.PROD || 3000;
