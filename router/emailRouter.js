@@ -13,7 +13,7 @@ emailRouter.post("/", async (req, res) => {
     const success = await sendEmailToClients(emails);
     success
       ? buildSuccessResponse(res, success, "Emails sent successfully")
-      : buildErrorResponse(res, "Something went wrong");
+      : buildErrorResponse(res, "Cannot Send Email");
   } catch (error) {
     console.log(error);
     buildErrorResponse(res, "Something went wrong");
