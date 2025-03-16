@@ -1,3 +1,0 @@
-{
-  "routes": [{ "src": "/api/v1/email", "dest": "/router/emailRouter.js" }]
-}
