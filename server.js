@@ -11,8 +11,14 @@ app.use(cors());
 
 app.use("/api/v1/email", emailRouter);
 
-app.listen(PORT, (error) => {
-  error
-    ? console.log(error.message)
-    : console.log("Server running successfully at http://localhost:" + PORT);
-});
+if (!process.env.PROD) {
+  app.listen(PORT, (error) => {
+    error
+      ? console.log(error.message)
+      : console.log("Server running successfully at http://localhost:" + PORT);
+  });
+}
+
+export default (req, res) => {
+  app(req, res);
+};
