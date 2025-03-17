@@ -20,4 +20,13 @@ emailRouter.post("/", async (req, res) => {
   }
 });
 
+emailRouter.get("/", async (req, res) => {
+  try {
+    buildSuccessResponse(res, {}, "Emails sent successfully");
+    buildErrorResponse(res, "Cannot Send Email");
+  } catch (error) {
+    console.log(error);
+    buildErrorResponse(res, "Something went wrong");
+  }
+});
 export default emailRouter;
